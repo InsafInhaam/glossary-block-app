@@ -90,7 +90,7 @@ const GlossaryBlock = () => {
                 <li key={item.id} className="GlossaryItem">
                   <h3>{item.title.rendered}</h3>
                   <div className="GlossaryItem-para">
-                  <p dangerouslySetInnerHTML={{ __html: item.content.rendered }}></p>
+                  <p dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}></p>
                   </div>
                 </li>
               ))}
