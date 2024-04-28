@@ -7,13 +7,13 @@ const GlossaryBlock = () => {
   const [filterLetter, setFilterLetter] = useState("");
 
   useEffect(() => {
-    fetch("http://codexlab-theme.local/wp-json/wp/v2/glossary")
+    fetch("https://blogs.insafinhaam.com/wp-json/wp/v2/glossary")
       .then((response) => response.json())
       .then((data) => {
         setGlossaryData(data);
       })
       .catch((error) => console.error("Error fetching glossary data:", error));
-  }, []);
+  }, [glossaryData]);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
