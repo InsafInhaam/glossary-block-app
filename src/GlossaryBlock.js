@@ -7,7 +7,7 @@ const GlossaryBlock = () => {
   const [filterLetter, setFilterLetter] = useState("");
 
   useEffect(() => {
-    fetch("https://blogs.insafinhaam.com/wp-json/wp/v2/glossary")
+    fetch(process.env.REACT_APP_API_URL + "/wp-json/wp/v2/glossary")
       .then((response) => response.json())
       .then((data) => {
         setGlossaryData(data);

@@ -1,8 +1,8 @@
 import "./App.css";
-import GlossaryBlock from "./GlossaryBlock";
+import GlossaryBlock from "./GlossaryBlockJson";
 
 function App() {
-  return <GlossaryBlock />;
+  return <GlossaryBlock/>
 }
 
 export default App;
