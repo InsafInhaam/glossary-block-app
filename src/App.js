@@ -1,5 +1,5 @@
 import "./App.css";
-import GlossaryBlock from "./GlossaryBlockJson";
+import GlossaryBlock from "./GlossaryBlock";
 
 function App() {
   return <GlossaryBlock/>

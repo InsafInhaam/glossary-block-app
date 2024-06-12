@@ -1,10 +1,11 @@
 /* App.css */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Playfair Display", serif;
 }
 
 .container {
@@ -13,17 +14,29 @@ body {
 }
 
 .header {
-  background-image: url(./assets/banner.png);
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background: url(https://www.drsskincare.ca/wp-content/themes/ekwa/images/ip-header-background.jpg)
+    rgba(54, 59, 83, 0.6);
+  -webkit-background-size: cover;
   background-size: cover;
-  background-position: 50%;
+  background-position: top center;
   background-repeat: no-repeat;
-  padding: 40px;
+  background-blend-mode: multiply;
+  margin-bottom: 2em;
 }
 
 .glossary-heading {
-  color: #3e77a0 !important;
-  font-size: 40px;
-  font-weight: 300;
+  color: #fff !important;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.glossary-p {
+  /* text-align: center; */
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .filter-print {
@@ -97,10 +110,18 @@ body {
   width: 75%;
 }
 
+.loading{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
 
 /* Hide header and filter section when printing */
 @media print {
-  .header, .filter-print {
+  .header,
+  .filter-print {
     display: none !important;
   }
 }
