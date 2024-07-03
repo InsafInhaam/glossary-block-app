@@ -1,27 +1,21 @@
-/* App.css */
-/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-
-body {
+.glossary-block-body{
   margin: 0;
   padding: 0;
-  font-family: "Playfair Display", serif;
 }
 
-.container {
+.glossary-container {
   max-width: 1300px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
   display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .header {
-  padding-top: 75px;
-  padding-bottom: 75px;
-  background: url(./assets/ip-header-background-min.jpg)
+  background: url(https://www.drsskincare.ca/wp-content/uploads/2024/06/ip-header-background-min.jpg)
     rgba(54, 59, 83, 0.6);
   -webkit-background-size: cover;
   background-size: cover;
@@ -29,6 +23,7 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   margin-bottom: 2em;
+  padding: 50px 0;
 }
 
 .glossary-heading {
@@ -39,7 +34,6 @@ body {
 }
 
 .glossary-p {
-  /* text-align: center; */
   text-transform: uppercase;
   color: #fff;
 }
@@ -59,42 +53,62 @@ body {
 }
 
 .ButtonContainer .glossary-btn {
-  width: 2rem;
-  height: 2rem;
+  width: 40px;
+  height: 40px;
   margin: 6px !important;
   color: #5462a3;
   text-align: center;
   text-decoration: none !important;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 20px;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: 1px solid #5462a3;
+  outline: none;
+}
+
+/* Active button styles */
+.ButtonContainer .glossary-btn.active {
+  background-color: #5462a3;
+  color: #fff;
+}
+
+.SearchContainer {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2.2rem;
 }
 
 .SearchInput {
   background: #fff;
   border: 0;
-  border-radius: 0;
+  border-radius: 6px;
   -webkit-appearance: none;
-  padding: 20px 10px;
-    width: 94%;
-  margin: 0;
+  padding: 10px 15px !important;
+  width: 100%;
   outline: none;
   color: #333;
   font-weight: 400;
-  margin: 0 0 2.2rem;
+  padding-left: 40px; /* Adjusted padding for search icon */
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5462a3;
+  font-size: 1rem;
 }
 
 .GlossaryList {
   list-style-type: none;
   padding: 0;
-  margin: 0 6px;
+  margin: 0;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -104,7 +118,7 @@ body {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 100%;
   background: #f3f3f3;
   margin-bottom: 1rem;
   padding: 15px;
@@ -114,15 +128,16 @@ body {
 .GlossaryItem h3 {
   width: 25%;
   color: #5462a3;
-  font-size: 16px;
+  font-size: 18px;
   word-wrap: break-word;
+  font-weight: bold;
 }
 
 .GlossaryItem-para {
   width: 75%;
 }
 
-.loading{
+.loading {
   display: flex;
   width: 100%;
   align-items: center;
@@ -130,17 +145,49 @@ body {
   padding-top: 20px;
 }
 
-/* Hide header and filter section when printing */
+.print-btn{
+  padding-left: 10px;
+}
+
+.no-results{
+  font-weight: bold;
+}
+
 @media print {
+  /* Hide everything by default */
+  head,
+  title,
   .header,
-  .filter-print {
+  .filter-print,
+  .mheader,
+  #mheader,
+  header,
+  footer,
+  .success-stories-wrapper,
+  .footer-icons,
+  .chatprompt,
+  .cta-wrapper {
     display: none !important;
+  }
+
+  /* Show only the GlossaryList and its children */
+  .GlossaryList,
+  .GlossaryList * {
+    display: block !important;
   }
 }
 
+@media (max-width: 800px) {
+  .GlossaryItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-@media(max-width: 650px){
   .GlossaryItem h3 {
-    width: 30%;
-}
+    width: 100%;
+  }
+
+  .GlossaryItem-para {
+    width: 100%;
+  }
 }
