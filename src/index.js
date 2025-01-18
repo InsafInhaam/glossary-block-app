@@ -8,3 +8,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// we can edit directly and do changes here 
